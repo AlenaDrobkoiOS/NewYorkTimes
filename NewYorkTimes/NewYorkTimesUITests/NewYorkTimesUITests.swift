@@ -2,7 +2,7 @@
 //  NewYorkTimesUITests.swift
 //  NewYorkTimesUITests
 //
-//  Created by Альона Дробко on 08.06.23.
+//  Created by Alena Drobko on 08.06.23.
 //
 
 import XCTest
