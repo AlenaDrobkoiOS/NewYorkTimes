@@ -18,6 +18,7 @@ final class AppCoordinator: Coordinator<Void> {
     private let window: UIWindow
     
     private var navigationController = UINavigationController()
+    private var serviceHolder = ServiceHolder()
     
     init(injections: Injections) {
         self.window = injections.window
@@ -26,11 +27,16 @@ final class AppCoordinator: Coordinator<Void> {
     
     @discardableResult // ignore return value
     override func start() -> Observable<Void> {
-        setNC()
+        setUp()
         
         coordinateToSplash()
-        
+
         return .never()
+    }
+    
+    private func setUp() {
+        setUpNC()
+        setUpServices()
     }
     
     private func coordinateToSplash() {
@@ -38,8 +44,14 @@ final class AppCoordinator: Coordinator<Void> {
         splashCoordinator.start()
     }
     
+    /// Init some services, add services to service holder
+    private func setUpServices() {
+        let newsUseCase = UseCaseFactory.makeNewsUseCase()
+        serviceHolder.add(NewsUseCaseType.self, for: newsUseCase)
+    }
+    
     /// Set up navigation controller
-    private func setNC() {
+    private func setUpNC() {
         navigationController.navigationBar.barTintColor = .white
         navigationController.setNavigationBarHidden(true, animated: false)
         
