@@ -7,10 +7,12 @@ NewYorkTimes is a simple iOS news app that allows users to read articles.
 - [Description](#description)
 - [Features](#features)
 - [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Service Holder](#service-holder)
 
 ## Description
 
-NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open API for retrieving news articles, which are then sorted into categories. The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. All libraries and frameworks used in the project are installed via CocoaPods. 
+NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open API for retrieving news articles, which are sorted into categories. The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. All libraries and frameworks used in the project are installed via CocoaPods.
 
 ## Features
 
@@ -45,3 +47,23 @@ To install and run NewYorkTimes on your iOS device, please follow these steps:
    $ open NewYorkTimes.xcworkspace
    
 8. Build and run the project in Xcode.
+
+## Dependencies
+
+The following libraries and frameworks are used in NewYorkTimes:
+
+- RxSwift: Reactive programming library for Swift.
+- RxCocoa: Reactive extensions for UIKit and Cocoa.
+- Moya: Network abstraction layer built on top of Alamofire for easy networking.
+- Moya/RxSwift: Reactive extensions for Moya.
+
+All dependencies are managed using CocoaPods. To install the required dependencies, make sure you have CocoaPods installed and run the following command in your project directory:
+
+```bash
+$ pod install
+```
+
+## Service Holder
+
+The app utilizes a service holder to manage various services in the app. The service holder provides a convenient and centralized way to handle different services and their dependencies. It abstracts away the implementation details, making it easier to manage and coordinate different services within the app.
+
