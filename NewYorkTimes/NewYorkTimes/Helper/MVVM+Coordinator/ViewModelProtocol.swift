@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ViewModelProtocol {
+public protocol ViewModelProtocol: DeinitLoggerType {
     associatedtype Input
     associatedtype Output
 

@@ -8,4 +8,4 @@
 import UIKit
 
 /// Splash screen controller
-final class SplashViewController: UIViewController {}
+final class SplashViewController: UIViewController, DeinitLoggerType {}

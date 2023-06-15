@@ -7,15 +7,11 @@
 
 import Foundation
 
-public protocol AuthorizationTokenProvider {
-    func token() -> String?
-}
-
 final class ApiKeyProvider: AuthorizationTokenProvider {
     
     static let shared = ApiKeyProvider()
     
     func token() -> String? {
-        return "0c555e089fca42c382288867a649e7a7"
+        return "9a45f772dcf141b392dbb034f0cc3c80"//"0c555e089fca42c382288867a649e7a7"
     }
 }

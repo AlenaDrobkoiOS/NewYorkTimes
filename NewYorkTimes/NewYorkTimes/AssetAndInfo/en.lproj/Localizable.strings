@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NewYorkTimes
+
+  Created by Alena Drobko on 14.06.23.
+  
+*/
+
+"Global.menuTitle" = "Change Category";
+"Global.error" = "Error";
+"Global.OK" = "OK";

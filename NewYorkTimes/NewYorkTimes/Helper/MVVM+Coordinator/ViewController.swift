@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RxSwift
 
-public protocol ViewProtocol {
+public protocol ViewProtocol: DeinitLoggerType {
     associatedtype ViewModelType: ViewModelProtocol
     
     var viewModel: ViewModelType! { get set }
@@ -17,9 +18,7 @@ public protocol ViewProtocol {
 }
 
 open class ViewController<ViewModel: ViewModelProtocol>: UIViewController,
-                                                         ViewProtocol,
-                                                         DeinitLoggerType
-
+                                                         ViewProtocol
 {
     // MARK: - Properties
     
@@ -82,4 +81,26 @@ open class ViewController<ViewModel: ViewModelProtocol>: UIViewController,
     open func setupOutput() {}
 
     open func setupInput(input: ViewModel.Output) {}
+}
+
+fileprivate enum AssociatedKeys {
+    static var disposeBag = "ViewController dispose bag associated key"
+}
+
+extension ViewController {
+
+    public fileprivate(set) var disposeBag: DisposeBag {
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            if let bag = objc_getAssociatedObject(self, &AssociatedKeys.disposeBag) as? DisposeBag {
+                return bag
+            } else {
+                let bag = DisposeBag()
+                objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, bag, .OBJC_ASSOCIATION_RETAIN)
+                return bag
+            }
+        }
+    }
 }

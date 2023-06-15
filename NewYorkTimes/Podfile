@@ -17,7 +17,8 @@ end
   pod 'RxCocoa'
   pod 'Moya'
   pod 'Moya/RxSwift'
-
+  pod 'SnapKit'
+pod 'Kingfisher'
   target 'NewYorkTimesTests' do
     inherit! :search_paths
     # Pods for testing

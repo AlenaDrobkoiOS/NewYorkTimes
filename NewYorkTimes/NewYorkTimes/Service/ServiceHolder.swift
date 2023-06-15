@@ -9,7 +9,7 @@
 public protocol Service {}
 
 /// Service Holder
-public class ServiceHolder {
+public final class ServiceHolder {
     /// Services dictionary/// Services dictionary
     private var servicesDictionary: [String: Service] = [:]
 

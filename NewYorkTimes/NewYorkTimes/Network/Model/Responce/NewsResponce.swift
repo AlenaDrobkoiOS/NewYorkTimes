@@ -17,18 +17,18 @@ struct NewsResponce: BaseResponseProtocol {
 }
 
 struct ArticleDataType: Codable {
-    var source: SourceDataType // The source this article came from.
-    var author: String // The author of the article
-    var title: String // The headline or title of the article.
+    var source: SourceDataType? // The source this article came from.
+    var author: String? // The author of the article
+    var title: String? // The headline or title of the article.
     var description: String? // A description or snippet from the article.
-    var url: String // The direct URL to the article.
+    var url: String? // The direct URL to the article.
     var urlToImage: String? // The URL to a relevant image for the article.
-    var publishedAt: String // The date and time that the article was published, in UTC (+000)
+    var publishedAt: String? // The date and time that the article was published, in UTC (+000)
     var content: String? // The unformatted content of the article, where available. This is truncated to 200 chars.
 }
 
 struct SourceDataType: Codable {
-    var id: String // The identifier of the news source. You can use this with our other endpoints.
+    var id: String? // The identifier of the news source. You can use this with our other endpoints.
     var name: String // The name of the news source
     var description: String? // A description of the news source
     var url: String? // The URL of the homepage.

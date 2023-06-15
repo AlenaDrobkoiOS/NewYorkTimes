@@ -21,7 +21,7 @@ public extension DeinitLoggerType {
     }
 }
 
-private class DeinitLogger {
+private final class DeinitLogger {
     private let className: String
 
     init(object: AnyObject) {

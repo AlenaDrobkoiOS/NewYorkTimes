@@ -24,7 +24,7 @@ class NetworkProvider<EndpointType: TargetType> {
             .flatMap { response in
                 return Single.just(response)
                     .map(T.self, using: JSONDecoder())
-                    .checkServerError()
             }
+            .checkServerError()
     }
 }
