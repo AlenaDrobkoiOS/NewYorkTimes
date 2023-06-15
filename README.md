@@ -9,6 +9,7 @@ NewYorkTimes is a simple iOS news app that allows users to read articles.
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Service Holder](#service-holder)
+- [UI](#ui)
 
 ## Description
 
@@ -56,6 +57,8 @@ The following libraries and frameworks are used in NewYorkTimes:
 - RxCocoa: Reactive extensions for UIKit and Cocoa.
 - Moya: Network abstraction layer built on top of Alamofire for easy networking.
 - Moya/RxSwift: Reactive extensions for Moya.
+- Kingfisher: A lightweight and pure-Swift library for downloading and caching images from the web.
+- SnapKit: A Swift autolayout DSL for iOS and macOS.
 
 All dependencies are managed using CocoaPods. To install the required dependencies, make sure you have CocoaPods installed and run the following command in your project directory:
 
@@ -67,3 +70,8 @@ $ pod install
 
 The app utilizes a service holder to manage various services in the app. The service holder provides a convenient and centralized way to handle different services and their dependencies. It abstracts away the implementation details, making it easier to manage and coordinate different services within the app.
 
+## UI
+
+The user interface (UI) of NewYorkTimes is created programmatically using SnapKit. SnapKit is a Swift autolayout DSL that allows you to define your UI constraints in a more expressive and concise way.
+
+By using programmatic UI, the app provides flexibility and customization options for adapting to different device sizes and orientations. The UI components are created and configured in the corresponding view controllers, leveraging SnapKit to define their layout constraints.
