@@ -16,15 +16,25 @@ NewYorkTimes is a simple iOS news app that allows users to read articles.
 
 ## Description
 
-NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open news API for retrieving news articles, which are sorted into categories. The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. All libraries and frameworks used in the project are installed via CocoaPods.
+NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open news API for retrieving news articles, which are sorted into categories. 
+
+The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. 
+
+All libraries and frameworks used in the project are installed via CocoaPods.
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-*Main Screen*
+<p align="center">
+  <img src="screenshots/screenshot1.png" alt="Screenshot 1" width="300" />
+  <br />
+  <em>Main Screen</em>
+</p>
 
-![Screenshot 2](screenshots/screenshot2.png)
-*Details Screen*
+<p align="center">
+  <img src="screenshots/screenshot2.png" alt="Screenshot 2" width="300" />
+  <br />
+  <em>Details Screen</em>
+</p>
 
 ## Features
 
