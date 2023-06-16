@@ -9,3 +9,5 @@
 "Global.menuTitle" = "Change Category";
 "Global.error" = "Error";
 "Global.OK" = "OK";
+"Global.openInfo" = "Open full info";
+"Global.urlWarning" = "Sorry, this url is not avaliable";

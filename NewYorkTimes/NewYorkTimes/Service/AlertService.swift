@@ -12,10 +12,13 @@ protocol AlertServiceType: Service {
 }
 
 enum AlertType {
+    case warning(_ message: String)
     case error(_ error: Error)
     
     var info: (title: String, message: String) {
         switch self {
+        case .warning(let message):
+            return (Localizationable.Global.error.localized, message)
         case .error(let error):
             return (Localizationable.Global.error.localized, error.localizedDescription)
         }

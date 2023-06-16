@@ -54,7 +54,10 @@ struct Style {
     }
     
     struct Font {
+        static let semiboldText = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        static let boldText = UIFont.systemFont(ofSize: 24, weight: .bold)
+        static let regularMidleText = UIFont.systemFont(ofSize: 16, weight: .regular)
         static let mediumText = UIFont.systemFont(ofSize: 14, weight: .medium)
-        static let regularText = UIFont.systemFont(ofSize: 12, weight: .regular)
+        static let regularSmallText = UIFont.systemFont(ofSize: 12, weight: .regular)
     }
 }

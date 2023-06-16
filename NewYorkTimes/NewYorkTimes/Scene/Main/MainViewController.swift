@@ -93,7 +93,7 @@ final class MainViewController: ViewController<MainViewModel> {
         
         navigationItem.title = "General"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        navigationItem.largeTitleDisplayMode = .always
         navigationItem.setHidesBackButton(true, animated: false)
         
         let categoryMenuButton = UIBarButtonItem(title: nil,

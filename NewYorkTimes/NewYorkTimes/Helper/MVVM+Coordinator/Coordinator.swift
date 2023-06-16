@@ -15,6 +15,7 @@ class Coordinator<ResultType>: NSObject, DeinitLoggerType {
     typealias CoordinationResult = ResultType
     
     let disposeBag = DisposeBag()
+    
     private let identifier = UUID()
     private var childCoordinators = [UUID: Any]()
     

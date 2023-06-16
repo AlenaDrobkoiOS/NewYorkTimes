@@ -82,7 +82,7 @@ final class MainTableViewCell: TableViewCell {
         
         dateLabel.numberOfLines = 1
         dateLabel.textColor = .gray
-        dateLabel.font = Style.Font.regularText
+        dateLabel.font = Style.Font.regularSmallText
     }
     
     func render(_ model: MainCellModel) {

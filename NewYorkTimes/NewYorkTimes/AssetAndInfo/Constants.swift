@@ -15,6 +15,7 @@ struct Constants {
         return url
     }
     
-    static let dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    static let inputDateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    static let outputDateFormat = "MM/dd/yyyy"
     static let country = "us"
 }

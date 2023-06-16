@@ -24,6 +24,8 @@ enum Localizationable {
         case menuTitle = "Global.menuTitle"
         case error = "Global.error"
         case ok = "Global.OK"
+        case openInfo = "Global.openInfo"
+        case urlWarning = "Global.urlWarning"
     }
 }
 

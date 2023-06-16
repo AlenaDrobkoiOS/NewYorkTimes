@@ -83,7 +83,7 @@ extension MainViewModel: ViewModelProtocol {
         input.disposeBag.insert([
             setUpLoadMore(with: input.loadMore),
             setUpCategorySelected(with: input.categorySelected),
-            setUpItemsSelected(with: input.itemsSelected, inside: articles)
+            setUpItemsSelected(with: input.itemsSelected)
         ])
         
         let output = Output(
@@ -121,10 +121,10 @@ extension MainViewModel: ViewModelProtocol {
             })
     }
     
-    private func setUpItemsSelected(with signal: Observable<Int>, inside array: [ArticleDataType]) -> Disposable {
+    private func setUpItemsSelected(with signal: Observable<Int>) -> Disposable {
         signal
-            .filter({ $0 < array.count })
-            .map({ array[$0] })
+            .filter({ $0 < self.articles.count })
+            .map({ self.articles[$0] })
             .bind(to: self.openArticle)
     }
 }

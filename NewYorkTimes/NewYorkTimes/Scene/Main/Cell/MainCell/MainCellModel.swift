@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MainCellModel {
+public struct MainCellModel {
     let title: String?
     let date: String?
     let imageURL: String?
@@ -20,7 +20,7 @@ struct MainCellModel {
     
     init(data: ArticleDataType) {
         self.title = data.title
-        self.date = data.publishedAt?.getDateString()?.timeAgoDisplay()
+        self.date = data.publishedAt?.getDate()?.timeAgoDisplay()
         self.imageURL = data.urlToImage
     }
 }

@@ -53,10 +53,15 @@ open class ViewController<ViewModel: ViewModelProtocol>: UIViewController,
         setupConstraints()
         setupView()
         setupScrollCollection()
-        setupNavigationBar()
         setupLocalization()
         
         setupOutput()
+    }
+    
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationBar()
     }
 
     // MARK: - Setup Functions
