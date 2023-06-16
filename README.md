@@ -5,15 +5,26 @@ NewYorkTimes is a simple iOS news app that allows users to read articles.
 ## Table of Contents
 
 - [Description](#description)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Service Holder](#service-holder)
 - [UI](#ui)
+- [Networking](#networking)
+- [Contact](#contact)
 
 ## Description
 
-NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open API for retrieving news articles, which are sorted into categories. The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. All libraries and frameworks used in the project are installed via CocoaPods.
+NewYorkTimes is an iOS news app designed to provide users with a seamless reading experience. The app utilizes an open news API for retrieving news articles, which are sorted into categories. The app is built using the Swift programming language and leverages RXSwift to facilitate reactive programming. It follows the MVVM architecture pattern, ensuring a clean and organized codebase. The Coordinator pattern is utilized for navigation, making it easy to manage the flow between different screens. All libraries and frameworks used in the project are installed via CocoaPods.
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+*Main Screen*
+
+![Screenshot 2](screenshots/screenshot2.png)
+*Details Screen*
 
 ## Features
 
@@ -21,7 +32,6 @@ NewYorkTimes is an iOS news app designed to provide users with a seamless readin
 - Read articles within the app
 - Sort articles by categories
 - Enjoy a clean and intuitive user interface
-- Seamlessly navigate between different screens using the Coordinator pattern
 
 ## Installation
 
@@ -75,3 +85,17 @@ The app utilizes a service holder to manage various services in the app. The ser
 The user interface (UI) of NewYorkTimes is created programmatically using SnapKit. SnapKit is a Swift autolayout DSL that allows you to define your UI constraints in a more expressive and concise way.
 
 By using programmatic UI, the app provides flexibility and customization options for adapting to different device sizes and orientations. The UI components are created and configured in the corresponding view controllers, leveraging SnapKit to define their layout constraints.
+
+## Networking
+
+NewYorkTimes leverages the power of Moya and RxSwift for network requests. Moya is a network abstraction layer built on top of Alamofire, providing a convenient and type-safe way to make API requests. RxSwift integrates seamlessly with Moya, allowing you to handle network responses reactively.
+
+The network layer is structured using the MVVM pattern, where view models make use of Moya to interact with the API and retrieve news articles via UseCase class. RxSwift enables the handling of asynchronous operations in a reactive manner, allowing for easy composition and chaining of network requests.
+
+To configure the network layer, refer to the NetworkProvider class in the project. This is where Moya's Provider is set up with the necessary plugins, headers, and base URL for making network requests.
+
+## Contact
+
+If you have any questions, suggestions, or feedback, please feel free to reach out to me:
+
+Email: alena.drobko.ios@gmail.com
