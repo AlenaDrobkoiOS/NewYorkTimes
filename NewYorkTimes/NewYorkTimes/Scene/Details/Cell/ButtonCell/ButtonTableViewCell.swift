@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 
+/// Details screen button cell - contains button to tap
 final class ButtonTableViewCell: TableViewCell {
     
     private var containerView = UIView()

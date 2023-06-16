@@ -5,7 +5,6 @@
 //  Created by Alena Drobko on 13.06.23.
 //
 
-import Foundation
 import Kingfisher
 
 extension UIImageView {

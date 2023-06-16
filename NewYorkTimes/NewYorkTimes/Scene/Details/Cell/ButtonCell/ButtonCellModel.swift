@@ -7,6 +7,7 @@
 
 import RxSwift
 
+/// Details screen button cell data model with tapObservable
 final class ButtonCellModel: ReactiveCompatible {
     let title: String
     

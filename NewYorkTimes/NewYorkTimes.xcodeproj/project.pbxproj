@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		3973255A04584574E3FB676B /* Pods_NewYorkTimesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75576F9B4AEB81827F60C871 /* Pods_NewYorkTimesTests.framework */; };
 		3D311566997D0DF81568FD20 /* Pods_NewYorkTimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611314A4EB3DD2295BA67CBB /* Pods_NewYorkTimes.framework */; };
+		952103D12A3CCEE8006CD966 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952103D02A3CCEE8006CD966 /* View.swift */; };
+		952103D32A3CDCF0006CD966 /* BaseMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952103D22A3CDCF0006CD966 /* BaseMainViewModel.swift */; };
+		952103D72A3CDE35006CD966 /* BaseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952103D62A3CDE35006CD966 /* BaseDetailsViewModel.swift */; };
 		95255D322A3268C600FD6F03 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95255D312A3268C600FD6F03 /* AppCoordinator.swift */; };
-		95255D362A3268D200FD6F03 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95255D352A3268D200FD6F03 /* Storyboard.swift */; };
-		95255D3B2A3268DB00FD6F03 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95255D392A3268DB00FD6F03 /* SplashCoordinator.swift */; };
-		95255D3C2A3268DB00FD6F03 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95255D3A2A3268DB00FD6F03 /* SplashViewController.swift */; };
 		95255D3E2A3268F000FD6F03 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95255D3D2A3268F000FD6F03 /* Splash.storyboard */; };
 		95255D402A326A7F00FD6F03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95255D3F2A326A7F00FD6F03 /* SceneDelegate.swift */; };
 		95284E672A35E42400DD8ACA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95284E662A35E42400DD8ACA /* UseCaseFactory.swift */; };
@@ -96,10 +96,10 @@
 		611314A4EB3DD2295BA67CBB /* Pods_NewYorkTimes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYorkTimes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75576F9B4AEB81827F60C871 /* Pods_NewYorkTimesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYorkTimesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C2C668358A37894C042E9F /* Pods-NewYorkTimes-NewYorkTimesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYorkTimes-NewYorkTimesUITests.debug.xcconfig"; path = "Target Support Files/Pods-NewYorkTimes-NewYorkTimesUITests/Pods-NewYorkTimes-NewYorkTimesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		952103D02A3CCEE8006CD966 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		952103D22A3CDCF0006CD966 /* BaseMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMainViewModel.swift; sourceTree = "<group>"; };
+		952103D62A3CDE35006CD966 /* BaseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDetailsViewModel.swift; sourceTree = "<group>"; };
 		95255D312A3268C600FD6F03 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		95255D352A3268D200FD6F03 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
-		95255D392A3268DB00FD6F03 /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
-		95255D3A2A3268DB00FD6F03 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		95255D3D2A3268F000FD6F03 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		95255D3F2A326A7F00FD6F03 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		95284E662A35E42400DD8ACA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
@@ -216,16 +216,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		95255D2F2A32684900FD6F03 /* AssetAndInfo */ = {
+		952103CF2A3CCECB006CD966 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				95F3E6E62A364F9B0035050A /* Constants.swift */,
+				952103D02A3CCEE8006CD966 /* View.swift */,
+				95479D512A388DC4009F9AC7 /* TableViewCell.swift */,
+				952967FC2A337E4F00AB7EFD /* DeinitLogger.swift */,
+				95284E652A35E3FE00DD8ACA /* MVVM+Coordinator */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		952103D42A3CDD28006CD966 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952103D22A3CDCF0006CD966 /* BaseMainViewModel.swift */,
+				95B59B392A38553D0032166C /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		952103D52A3CDD83006CD966 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952103D62A3CDE35006CD966 /* BaseDetailsViewModel.swift */,
+				95479D782A3B4C49009F9AC7 /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		95255D2F2A32684900FD6F03 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				954A15722A325529001E8C30 /* Info.plist */,
 				954A156D2A325529001E8C30 /* Assets.xcassets */,
 				95479D612A39DCFE009F9AC7 /* Localizable.strings */,
-				95479D662A3A1101009F9AC7 /* Style.swift */,
 			);
-			path = AssetAndInfo;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		95255D302A3268C600FD6F03 /* Coordinator */ = {
@@ -239,10 +266,9 @@
 		95255D342A3268D200FD6F03 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				95284E652A35E3FE00DD8ACA /* MVVM+Coordinator */,
-				95479D512A388DC4009F9AC7 /* TableViewCell.swift */,
-				95255D352A3268D200FD6F03 /* Storyboard.swift */,
-				952967FC2A337E4F00AB7EFD /* DeinitLogger.swift */,
+				952103CF2A3CCECB006CD966 /* Base */,
+				95479D662A3A1101009F9AC7 /* Style.swift */,
+				95F3E6E62A364F9B0035050A /* Constants.swift */,
 				95479D622A39DDE1009F9AC7 /* Localizationable.swift */,
 			);
 			path = Helper;
@@ -253,18 +279,8 @@
 			children = (
 				95479D752A3B4C14009F9AC7 /* Details */,
 				95B59B342A3855160032166C /* Main */,
-				95255D382A3268DB00FD6F03 /* Splash */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		95255D382A3268DB00FD6F03 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				95255D392A3268DB00FD6F03 /* SplashCoordinator.swift */,
-				95255D3A2A3268DB00FD6F03 /* SplashViewController.swift */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		95284E642A35E3D300DD8ACA /* Network */ = {
@@ -328,8 +344,8 @@
 			isa = PBXGroup;
 			children = (
 				95284E762A35E82C00DD8ACA /* BaseResponce.swift */,
-				95284E742A35E6BF00DD8ACA /* NewsResponce.swift */,
 				95C738F62A371BC50014746D /* NetworkError.swift */,
+				95284E742A35E6BF00DD8ACA /* NewsResponce.swift */,
 			);
 			path = Responce;
 			sourceTree = "<group>";
@@ -395,8 +411,8 @@
 		95479D712A3B45C2009F9AC7 /* MainCell */ = {
 			isa = PBXGroup;
 			children = (
-				95479D4F2A388D42009F9AC7 /* MainTableViewCell.swift */,
 				95479D6F2A3B45A1009F9AC7 /* MainCellModel.swift */,
+				95479D4F2A388D42009F9AC7 /* MainTableViewCell.swift */,
 			);
 			path = MainCell;
 			sourceTree = "<group>";
@@ -413,11 +429,11 @@
 		95479D752A3B4C14009F9AC7 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				95C7A09D2A3CAF8100366D06 /* Model */,
-				95479D7E2A3B6A4F009F9AC7 /* Cell */,
-				95479D762A3B4C3E009F9AC7 /* DetailsViewController.swift */,
-				95479D782A3B4C49009F9AC7 /* DetailsViewModel.swift */,
 				95479D7A2A3B4C59009F9AC7 /* DetailsCoordinator.swift */,
+				95479D762A3B4C3E009F9AC7 /* DetailsViewController.swift */,
+				952103D52A3CDD83006CD966 /* ViewModel */,
+				95479D7E2A3B6A4F009F9AC7 /* Cell */,
+				95C7A09D2A3CAF8100366D06 /* Model */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -458,15 +474,15 @@
 			isa = PBXGroup;
 			children = (
 				952967FE2A337E9600AB7EFD /* Delegate */,
+				952967F92A331D3C00AB7EFD /* Storyboard */,
 				95255D302A3268C600FD6F03 /* Coordinator */,
 				95255D372A3268DB00FD6F03 /* Scene */,
-				952967F92A331D3C00AB7EFD /* Storyboard */,
-				95255D342A3268D200FD6F03 /* Helper */,
 				95C738F82A379EA30014746D /* Service */,
 				95284E642A35E3D300DD8ACA /* Network */,
 				95284E7B2A360D6500DD8ACA /* Extension */,
+				95255D342A3268D200FD6F03 /* Helper */,
+				95255D2F2A32684900FD6F03 /* Assets */,
 				952967F82A331D2400AB7EFD /* CoreData */,
-				95255D2F2A32684900FD6F03 /* AssetAndInfo */,
 			);
 			path = NewYorkTimes;
 			sourceTree = "<group>";
@@ -491,11 +507,11 @@
 		95B59B342A3855160032166C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				95479D6C2A3B2AB1009F9AC7 /* Model */,
-				95479D4E2A388D25009F9AC7 /* Cell */,
-				95B59B352A3855250032166C /* MainViewController.swift */,
 				95B59B372A38552F0032166C /* MainCoordinator.swift */,
-				95B59B392A38553D0032166C /* MainViewModel.swift */,
+				95B59B352A3855250032166C /* MainViewController.swift */,
+				952103D42A3CDD28006CD966 /* ViewModel */,
+				95479D4E2A388D25009F9AC7 /* Cell */,
+				95479D6C2A3B2AB1009F9AC7 /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -783,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952103D12A3CCEE8006CD966 /* View.swift in Sources */,
 				95479D652A3A0E0C009F9AC7 /* String.swift in Sources */,
 				95479D5C2A39D366009F9AC7 /* UIApplication.swift in Sources */,
 				952967FB2A337E1D00AB7EFD /* Coordinator.swift in Sources */,
@@ -806,21 +823,20 @@
 				95284E672A35E42400DD8ACA /* UseCaseFactory.swift in Sources */,
 				95479D562A38B6A0009F9AC7 /* UIView.swift in Sources */,
 				95479D542A388E25009F9AC7 /* UITableView.swift in Sources */,
+				952103D32A3CDCF0006CD966 /* BaseMainViewModel.swift in Sources */,
 				952967FD2A337E4F00AB7EFD /* DeinitLogger.swift in Sources */,
 				95C7A0912A3B73E300366D06 /* ButtonTableViewCell.swift in Sources */,
 				95284E702A35E5D900DD8ACA /* NewsEndpoints.swift in Sources */,
 				954A156C2A325528001E8C30 /* NewYorkTimes.xcdatamodeld in Sources */,
-				95255D3B2A3268DB00FD6F03 /* SplashCoordinator.swift in Sources */,
 				95284E752A35E6BF00DD8ACA /* NewsResponce.swift in Sources */,
-				95255D362A3268D200FD6F03 /* Storyboard.swift in Sources */,
 				95479D702A3B45A1009F9AC7 /* MainCellModel.swift in Sources */,
 				95479D6E2A3B2AC0009F9AC7 /* NewsCategory.swift in Sources */,
 				95479D802A3B6A8D009F9AC7 /* ImageTableViewCell.swift in Sources */,
 				95284E6D2A35E56100DD8ACA /* NetworkProvider.swift in Sources */,
 				95C7A09A2A3CAAEF00366D06 /* DetailsCellModel.swift in Sources */,
 				95479D772A3B4C3E009F9AC7 /* DetailsViewController.swift in Sources */,
+				952103D72A3CDE35006CD966 /* BaseDetailsViewModel.swift in Sources */,
 				95C738F52A371B5C0014746D /* RXSwift.swift in Sources */,
-				95255D3C2A3268DB00FD6F03 /* SplashViewController.swift in Sources */,
 				952968022A33833300AB7EFD /* ViewModelProtocol.swift in Sources */,
 				95479D792A3B4C49009F9AC7 /* DetailsViewModel.swift in Sources */,
 				95479D742A3B4894009F9AC7 /* AuthorizationTokenProvider.swift in Sources */,
@@ -1009,9 +1025,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WZ6PF6S2GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewYorkTimes/AssetAndInfo/Info.plist;
+				INFOPLIST_FILE = NewYorkTimes/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1038,9 +1054,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WZ6PF6S2GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewYorkTimes/AssetAndInfo/Info.plist;
+				INFOPLIST_FILE = NewYorkTimes/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

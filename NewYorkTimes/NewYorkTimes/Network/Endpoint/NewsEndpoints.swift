@@ -7,6 +7,7 @@
 
 import Moya
 
+/// News requests enpoints
 enum NewsEndpoints: TargetType {
     case topHeadlines(requestData: RequestModelTypeProtocol)
 

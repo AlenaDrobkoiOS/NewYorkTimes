@@ -5,10 +5,10 @@
 //  Created by Alena Drobko on 15.06.23.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 
+/// Details screen image cell - contains poster image
 final class ImageTableViewCell: TableViewCell {
     
     private var containerView = UIView()

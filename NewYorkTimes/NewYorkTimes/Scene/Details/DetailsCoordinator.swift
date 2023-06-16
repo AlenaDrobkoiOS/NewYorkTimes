@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 
+/// Details screen coordinator result: dismiss or openURL
 enum DetailsCoordinatorResult {
     case openURL(URL)
     case dismiss
@@ -32,7 +33,7 @@ final class DetailsCoordinator: Coordinator<DetailsCoordinatorResult> {
     }
     
     override func start() -> Observable<CoordinationResult> {
-        let injections = DetailsViewModel.Injections(serviceHolder: self.serviceHolder, article: article)
+        let injections = DetailsViewModel.Injections(serviceHolder: serviceHolder, article: article)
         let viewModel = DetailsViewModel(injections: injections)
         let controller = DetailsViewController(viewModel: viewModel)
         

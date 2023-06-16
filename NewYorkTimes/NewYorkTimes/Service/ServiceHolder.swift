@@ -12,11 +12,6 @@ public protocol Service {}
 public final class ServiceHolder {
     /// Services dictionary/// Services dictionary
     private var servicesDictionary: [String: Service] = [:]
-
-    /// add Service with constructor
-    public func add<T>(_ type: T.Type, with name: String? = nil, constructor: () -> Service) {
-        self.add(type, for: constructor(), with: name)
-    }
     
     /// add Service
     public func add<T>(_ protocolType: T.Type, for instance: Service, with name: String? = nil) {

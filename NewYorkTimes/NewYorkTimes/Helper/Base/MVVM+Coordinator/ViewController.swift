@@ -8,15 +8,7 @@
 import UIKit
 import RxSwift
 
-public protocol ViewProtocol: DeinitLoggerType {
-    associatedtype ViewModelType: ViewModelProtocol
-    
-    var viewModel: ViewModelType! { get set }
-
-    func setupOutput()
-    func setupInput(input: ViewModelType.Output)
-}
-
+///Base protocol for all view controller
 open class ViewController<ViewModel: ViewModelProtocol>: UIViewController,
                                                          ViewProtocol
 {

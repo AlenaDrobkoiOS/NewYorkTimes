@@ -25,8 +25,7 @@ final class MainCoordinator: Coordinator<Void> {
     
     @discardableResult // ignore return value
     override func start() -> Observable<Void> {
-        let injections = MainViewModel.Injections(serviceHolder: self.serviceHolder)
-        let viewModel = MainViewModel(injections: injections)
+        let viewModel = MainViewModel(injections: .init(serviceHolder: serviceHolder))
         let controller = MainViewController(viewModel: viewModel)
         
         navigationController.pushViewController(controller, animated: false)
@@ -49,11 +48,9 @@ final class MainCoordinator: Coordinator<Void> {
     }
     
     private func openArticleDetails(with article: ArticleDataType) -> Observable<DetailsCoordinatorResult>  {
-        let injections = DetailsCoordinator.Injections(navigationController: self.navigationController,
-                                                       serviceHolder: self.serviceHolder,
-                                                       article: article)
-        let coordinator = DetailsCoordinator(injections: injections)
-        
+        let coordinator = DetailsCoordinator(injections: .init(navigationController: navigationController,
+                                                               serviceHolder: serviceHolder,
+                                                               article: article))
         return coordinate(to: coordinator)
     }
 }

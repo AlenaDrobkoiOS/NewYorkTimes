@@ -18,6 +18,7 @@ public extension Reusable {
     }
 }
 
+/// Base protocol for all UITableViewCell
 open class TableViewCell: UITableViewCell, Reusable {
     // MARK: - Properties
 

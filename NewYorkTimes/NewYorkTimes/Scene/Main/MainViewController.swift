@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 /// Main screen controller
-final class MainViewController: ViewController<MainViewModel> {
+final class MainViewController: ViewController<BaseMainViewModel> {
     
     // MARK: - UI elements
     
@@ -91,7 +91,7 @@ final class MainViewController: ViewController<MainViewModel> {
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         
-        navigationItem.title = "General"
+        navigationItem.title = NewsCategory.general.rawValue.capitalized
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.setHidesBackButton(true, animated: false)
@@ -107,7 +107,7 @@ final class MainViewController: ViewController<MainViewModel> {
     override func setupOutput() {
         super.setupOutput()
         
-        let input = MainViewModel.Input(
+        let input = BaseMainViewModel.Input(
             categorySelected: categorySelected.asObservable(),
             itemsSelected: tableView.rx.itemSelected.map({ $0.row }),
             loadMore: tableView.getScrollToBottomObserver(),
@@ -116,7 +116,7 @@ final class MainViewController: ViewController<MainViewModel> {
         viewModel.transform(input, outputHandler: setupInput(input:))
     }
     
-    override func setupInput(input: MainViewModel.Output) {
+    override func setupInput(input: BaseMainViewModel.Output) {
         super.setupInput(input: input)
         
         disposeBag.insert(

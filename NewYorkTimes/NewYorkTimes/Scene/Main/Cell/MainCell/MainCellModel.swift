@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Main screen cell data model
 public struct MainCellModel {
     let title: String?
     let date: String?

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Details screen text cell types: title, source, content, date, author
 enum TextCellModelType {
     case title
     case source
@@ -15,6 +16,7 @@ enum TextCellModelType {
     case author
 }
 
+/// Details screen text cell data model
 struct TextCellModel {
     let text: String?
     let type: TextCellModelType

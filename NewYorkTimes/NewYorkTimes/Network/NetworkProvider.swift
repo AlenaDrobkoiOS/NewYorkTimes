@@ -8,6 +8,7 @@
 import Moya
 import RxSwift
 
+/// Network Provider - use MoyaProvider and trigger request
 class NetworkProvider<EndpointType: TargetType> {
     let provider = MoyaProvider<EndpointType>()
     

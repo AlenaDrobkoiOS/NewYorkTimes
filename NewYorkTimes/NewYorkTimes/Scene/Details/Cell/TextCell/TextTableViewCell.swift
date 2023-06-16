@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 
+/// Details screen text cell - contains text by type
 final class TextTableCell: TableViewCell {
     
     private var containerView = UIView()

@@ -32,6 +32,7 @@ class Coordinator<ResultType>: NSObject, DeinitLoggerType {
         childCoordinators[coordinator.identifier] = nil
     }
 
+    @discardableResult // ignore return value
     func coordinate<T>(to coordinator: Coordinator<T>) -> Observable<T> {
         store(coordinator: coordinator)
         return coordinator.start()

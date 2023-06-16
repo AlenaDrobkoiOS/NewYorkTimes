@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// DetailsCell type with data model: image, text and button
 enum DetailsCellModel {
     case image(ImageCellModel)
     case text(TextCellModel)

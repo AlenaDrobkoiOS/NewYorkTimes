@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 
+/// Main screen cell - contains poster, title and date
 final class MainTableViewCell: TableViewCell {
     
     private var containerView = UIView()
@@ -21,16 +22,15 @@ final class MainTableViewCell: TableViewCell {
         posterImageView.image = nil
         titleLabel.text = nil
         dateLabel.text = nil
+        
         disposeBag = DisposeBag()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 10,
-                                                                               left: 10,
-                                                                               bottom: 10,
-                                                                               right: 10))
+        let insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        self.contentView.frame = self.contentView.frame.inset(by: insets)
     }
     
     override func setupConstraints() {

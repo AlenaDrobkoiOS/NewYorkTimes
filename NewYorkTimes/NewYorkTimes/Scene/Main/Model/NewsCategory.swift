@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// News category: general, business, entertainment, health, science, sports, technology
 enum NewsCategory: String, CaseIterable, Codable {
     case general
     case business

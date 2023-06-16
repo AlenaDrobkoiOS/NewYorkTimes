@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// News responce data model - contains info that comes with news responce
 struct NewsResponce: BaseResponseProtocol {
     var status: String // If the request was successful or not. Options: ok, error. In the case of ok, the below two properties will not be present.
     var code: String? // A short code identifying the type of error returned.

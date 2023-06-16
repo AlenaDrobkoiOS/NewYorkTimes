@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Details screen image cell data model
 struct ImageCellModel {
     let imageURL: String?
 }

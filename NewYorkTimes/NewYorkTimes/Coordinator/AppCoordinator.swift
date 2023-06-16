@@ -19,8 +19,7 @@ final class AppCoordinator: Coordinator<Void> {
     
     private var navigationController = UINavigationController()
     private var serviceHolder = ServiceHolder()
-    private var mainCoordinator: MainCoordinator?
-    private var splashCoordinator: SplashCoordinator?
+    
     init(injections: Injections) {
         self.window = injections.window
         super.init()
@@ -29,7 +28,6 @@ final class AppCoordinator: Coordinator<Void> {
     @discardableResult // ignore return value
     override func start() -> Observable<Void> {
         setUp()
-        coordinateToSplash()
         coordinateToMain()
         return .never()
     }
@@ -39,14 +37,10 @@ final class AppCoordinator: Coordinator<Void> {
         setUpServices()
     }
     
-    private func coordinateToSplash() {
-        splashCoordinator = SplashCoordinator(injections: .init(navigationController: navigationController))
-        splashCoordinator?.start()
-    }
-    
     private func coordinateToMain() {
-        mainCoordinator = MainCoordinator(injections: .init(navigationController: navigationController, serviceHolder: serviceHolder))
-        mainCoordinator?.start()
+        let mainCoordinator = MainCoordinator(injections: .init(navigationController: navigationController,
+                                                                serviceHolder: serviceHolder))
+       coordinate(to: mainCoordinator)
     }
     
     /// Init some services, add services to service holder

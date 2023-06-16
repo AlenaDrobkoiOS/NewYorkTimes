@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Protocol for request data
 public protocol RequestModelTypeProtocol {
     var baseUrl: URL { get }
     var authorizationToken: String? { get }
@@ -35,6 +36,7 @@ public extension RequestModelTypeProtocol {
     }
 }
 
+/// Base request data model - contains info that send with request
 struct BaseRequestDataModel<SendData: Encodable>: RequestModelTypeProtocol {
     // MARK: - Properties
     

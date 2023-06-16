@@ -8,6 +8,9 @@
 
 "Global.menuTitle" = "Change Category";
 "Global.error" = "Error";
+"Global.warning" = "Warning";
 "Global.OK" = "OK";
 "Global.openInfo" = "Open full info";
 "Global.urlWarning" = "Sorry, this url is not avaliable";
+"Global.noElementsWarning" = "No elements found";
+"Global.countWarning" = "Can't count elements";

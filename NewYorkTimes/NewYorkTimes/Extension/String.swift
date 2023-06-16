@@ -28,3 +28,9 @@ extension String {
         return outputFormatter.string(from: date)
     }
 }
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "\(self)_comment")
+    }
+}

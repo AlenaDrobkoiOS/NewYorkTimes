@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Protocol for any token, api key or another auth kind provider
 public protocol AuthorizationTokenProvider {
     func token() -> String?
 }
