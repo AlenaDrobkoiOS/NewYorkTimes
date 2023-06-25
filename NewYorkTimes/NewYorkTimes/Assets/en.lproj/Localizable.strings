@@ -14,3 +14,4 @@
 "Global.urlWarning" = "Sorry, this url is not avaliable";
 "Global.noElementsWarning" = "No elements found";
 "Global.countWarning" = "Can't count elements";
+"Global.unknownError" = "Unknown Error";
