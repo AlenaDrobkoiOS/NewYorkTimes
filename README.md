@@ -77,6 +77,7 @@ The following libraries and frameworks are used in NewYorkTimes:
 - RxCocoa: Reactive extensions for UIKit and Cocoa.
 - Moya: Network abstraction layer built on top of Alamofire for easy networking.
 - Moya/RxSwift: Reactive extensions for Moya.
+- Moya/Combine: Reactive extensions for Moya.
 - Kingfisher: A lightweight and pure-Swift library for downloading and caching images from the web.
 - SnapKit: A Swift autolayout DSL for iOS and macOS.
 
@@ -98,9 +99,9 @@ By using programmatic UI, the app provides flexibility and customization options
 
 ## Networking
 
-NewYorkTimes leverages the power of Moya and RxSwift for network requests. Moya is a network abstraction layer built on top of Alamofire, providing a convenient and type-safe way to make API requests. RxSwift integrates seamlessly with Moya, allowing you to handle network responses reactively.
+NewYorkTimes leverages the power of Moya and Combine for network requests. Moya is a network abstraction layer built on top of Alamofire, providing a convenient and type-safe way to make API requests. Combine integrates seamlessly with Moya, allowing you to handle network responses reactively.
 
-The network layer is structured using the MVVM pattern, where view models make use of Moya to interact with the API and retrieve news articles via UseCase class. RxSwift enables the handling of asynchronous operations in a reactive manner, allowing for easy composition and chaining of network requests.
+The network layer is structured using the MVVM pattern, where view models make use of Moya to interact with the API and retrieve news articles via UseCase class. Combine enables the handling of asynchronous operations in a reactive manner, allowing for easy composition and chaining of network requests.
 
 To configure the network layer, refer to the NetworkProvider class in the project. This is where Moya's Provider is set up with the necessary plugins, headers, and base URL for making network requests.
 
