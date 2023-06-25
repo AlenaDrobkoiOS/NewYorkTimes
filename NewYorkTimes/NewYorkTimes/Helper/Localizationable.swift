@@ -30,5 +30,6 @@ enum Localizationable {
         case urlWarning = "Global.urlWarning"
         case noElementsWarning = "Global.noElementsWarning"
         case countWarning = "Global.countWarning"
+        case unknownError = "Global.unknownError"
     }
 }

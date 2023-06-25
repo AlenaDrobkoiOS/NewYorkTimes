@@ -12,15 +12,13 @@ public enum NetworkError: Error {
     case warning(warning: String)
     case serverError(error: String?)
     case invalidAccessToken(dispatchedToken: String?, serverMessage: String)
-}
 
-extension NetworkError: LocalizedError {
-    public var errorDescription: String? {
+    var localizedDescription: String {
         switch self {
         case let .warning(warning):
-            return "Warning: \(warning)"
+            return warning
         case let .serverError(error):
-            return error
+            return error ?? Localizationable.Global.unknownError.localized
         case let .invalidAccessToken(dispatchedToken, serverMessage):
             return
                 """
