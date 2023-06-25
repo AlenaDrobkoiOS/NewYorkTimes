@@ -8,10 +8,11 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Combine
 
 /// Main screen view model
 final class MainViewModel: BaseMainViewModel {
-    private let bag = DisposeBag()
+    private var cancellables = Set<AnyCancellable>()
     
     private let newsUseCase: NewsUseCaseType
     private let alertService: AlertServiceType
@@ -52,7 +53,14 @@ final class MainViewModel: BaseMainViewModel {
                                    pageSize: pageSize,
                                    page: page)
         newsUseCase.getTopHeadlines(data)
-            .subscribe(onSuccess: { [weak self] element in
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    self.alertService.show.onNext(.error(error))
+                case .finished:
+                    print("GetTopHeadlines request finished")
+                }
+            } receiveValue: { [weak self] element in
                 guard let self else { return }
                 
                 if let articles = element.articles {
@@ -70,11 +78,14 @@ final class MainViewModel: BaseMainViewModel {
                     self.alertService.show.onNext(.warning(Localizationable.Global.countWarning.localized))
                 }
                 
+                if let error = element.message {
+                    let networkError = NetworkError.serverError(error: error)
+                    self.alertService.show.onNext(.error(networkError))
+                }
+                
                 self.isLoading.accept(false)
-            }, onFailure: { [weak self] error in
-                self?.alertService.show.onNext(.error(error))
-            })
-            .disposed(by: bag)
+            }
+            .store(in: &cancellables)
     }
     
     override func transform(_ input: Input, outputHandler: @escaping (Output) -> Void) {

@@ -5,16 +5,16 @@
 //  Created by Alena Drobko on 11.06.23.
 //
 
-import RxSwift
+import Combine
 
 /// NewsUseCase service protocol
 protocol NewsUseCaseType: Service {
-    func getTopHeadlines(_ data: NewsRequestData) -> Single<NewsResponce>
+    func getTopHeadlines(_ data: NewsRequestData) -> AnyPublisher<NewsResponce, NetworkError>
 }
 
 /// NewsUseCase - trigger news requests
 final class NewsUseCase: NetworkProvider<NewsEndpoints>, NewsUseCaseType {
-    func getTopHeadlines(_ data: NewsRequestData) -> Single<NewsResponce> {
+    func getTopHeadlines(_ data: NewsRequestData) -> AnyPublisher<NewsResponce, NetworkError> {
         let model = BaseRequestDataModel(sendData: data,
                                          baseUrl: baseUrl,
                                          authorizationToken: authProvider.token())

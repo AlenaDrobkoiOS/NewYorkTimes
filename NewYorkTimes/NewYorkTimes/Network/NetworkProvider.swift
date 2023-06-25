@@ -6,7 +6,7 @@
 //
 
 import Moya
-import RxSwift
+import Combine
 
 /// Network Provider - use MoyaProvider and trigger request
 class NetworkProvider<EndpointType: TargetType> {
@@ -20,12 +20,12 @@ class NetworkProvider<EndpointType: TargetType> {
         self.authProvider = authProvider
     }
     
-    internal func request<T>(endpoint: EndpointType) -> Single<T> where T: BaseResponseProtocol {
-        return provider.rx.request(endpoint)
-            .flatMap { response in
-                return Single.just(response)
-                    .map(T.self, using: JSONDecoder())
+    internal func request<T>(endpoint: EndpointType) -> AnyPublisher<T, NetworkError> where T: BaseResponseProtocol {
+        return provider.requestPublisher(endpoint)
+            .map(T.self, using: JSONDecoder())
+            .mapError { error in
+                return NetworkError.serverError(error: error.errorDescription)
             }
-            .checkServerError()
+            .eraseToAnyPublisher()
     }
 }

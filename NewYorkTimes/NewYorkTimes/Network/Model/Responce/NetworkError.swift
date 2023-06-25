@@ -10,7 +10,7 @@ import Foundation
 /// Kinds of network error
 public enum NetworkError: Error {
     case warning(warning: String)
-    case serverError(error: String)
+    case serverError(error: String?)
     case invalidAccessToken(dispatchedToken: String?, serverMessage: String)
 }
 
